@@ -1,31 +1,31 @@
-Ä½¿ÎÍøÏîÄ¿ÒªÓÃµ½µÄÅäÖÃÏî£º
-1£©local_root=/ftpfile(µ±±¾µØÓÃ»§µÇÈëÊ±£¬½«±»¸ü»»µ½¶¨ÒåµÄÄ¿Â¼ÏÂ£¬Ä¬ÈÏÖµÎª¸÷ÓÃ»§µÄ¼ÒÄ¿Â¼) 
-2£©anon_root=/ftpfile(Ê¹ÓÃÄäÃûµÇÈëÊ±£¬ËùµÇÈëµÄÄ¿Â¼) 
-3£©use_localtime=YES(Ä¬ÈÏÊÇGMTÊ±¼ä£¬¸Ä³ÉÊ¹ÓÃ±¾»úÏµÍ³Ê±¼ä)
-4£©anonymous_enable=NO(²»ÔÊÐíÄäÃûÓÃ»§µÇÂ¼)
-5£©local_enable=YES(ÔÊÐí±¾µØÓÃ»§µÇÂ¼)
-6£©write_enable=YES(±¾µØÓÃ»§¿ÉÒÔÔÚ×Ô¼º¼ÒÄ¿Â¼ÖÐ½øÐÐ¶ÁÐ´²Ù×÷)
-7£©local_umask=022(±¾µØÓÃ»§ÐÂÔöµµ°¸Ê±µÄumaskÖµ)
-8£©dirmessage_enable=YES(Èç¹ûÆô¶¯Õâ¸öÑ¡Ïî£¬ÄÇÃ´Ê¹ÓÃÕßµÚÒ»´Î½øÈëÒ»¸öÄ¿Â¼Ê±£¬»á¼ì²é¸ÃÄ¿Â¼ÏÂÊÇ·ñÓÐ.messageÕâ¸öµµ°¸£¬Èç¹ûÓÐ£¬Ôò»á³öÏÖ´Ëµµ°¸µÄÄÚÈÝ£¬Í¨³£Õâ¸öµµ°¸»á·ÅÖÃ»¶Ó­»°Óï£¬»òÊÇ¶Ô¸ÃÄ¿Â¼µÄËµÃ÷¡£Ä¬ÈÏÖµÎª¿ªÆô)
-9£©xferlog_enable=YES(ÊÇ·ñÆôÓÃÉÏ´«/ÏÂÔØÈÕÖ¾¼ÇÂ¼¡£Èç¹ûÆôÓÃ£¬ÔòÉÏ´«ÓëÏÂÔØµÄÐÅÏ¢½«±»ÍêÕû¼ÍÂ¼ÔÚxferlog_file Ëù¶¨ÒåµÄµµ°¸ÖÐ¡£Ô¤ÉèÎª¿ªÆô¡£)
-10£©connect_from_port_20=YES(Ö¸¶¨FTPÊ¹ÓÃ20¶Ë¿Ú½øÐÐÊý¾Ý´«Êä£¬Ä¬ÈÏÖµÎªYES)
-11£©xferlog_std_format=YES(Èç¹ûÆôÓÃ£¬ÔòÈÕÖ¾ÎÄ¼þ½«»áÐ´³ÉxferlogµÄ±ê×¼¸ñÊ½)
-12£©ftpd_banner=Welcome to mmall FTP Server(ÕâÀïÓÃÀ´¶¨Òå»¶Ó­»°ÓïµÄ×Ö·û´®)
-13£©chroot_local_user=NO(ÓÃÓÚÖ¸¶¨ÓÃ»§ÁÐ±íÎÄ¼þÖÐµÄÓÃ»§ÊÇ·ñÔÊÐíÇÐ»»µ½ÉÏ¼¶Ä¿Â¼)
-14£©chroot_list_enable=YES(ÉèÖÃÊÇ·ñÆôÓÃchroot_list_fileÅäÖÃÏîÖ¸¶¨µÄÓÃ»§ÁÐ±íÎÄ¼þ)
-15£©chroot_list_file=/etc/vsftpd/chroot_list(ÓÃÓÚÖ¸¶¨ÓÃ»§ÁÐ±íÎÄ¼þ)
-16£©listen=YES(ÉèÖÃvsftpd·þÎñÆ÷ÊÇ·ñÒÔstandaloneÄ£Ê½ÔËÐÐ£¬ÒÔstandaloneÄ£Ê½ÔËÐÐÊÇÒ»ÖÖ½ÏºÃµÄ·½Ê½£¬´ËÊ±listen±ØÐëÉèÖÃÎªYES£¬´ËÎªÄ¬ÈÏÖµ¡£½¨Òé²»Òª¸ü¸Ä£¬ÓÐºÜ¶àÓë·þÎñÆ÷ÔËÐÐÏà¹ØµÄÅäÖÃÃüÁî£¬ÐèÒªÔÚ´ËÄ£Ê½ÏÂ²ÅÓÐÐ§£¬ÈôÉèÖÃÎªNO£¬Ôòvsftpd²»ÊÇÒÔ¶ÀÁ¢µÄ·þÎñÔËÐÐ£¬ÒªÊÜµ½xinetd·þÎñµÄ¹Ü¿Ø£¬¹¦ÄÜÉÏ»áÊÜµ½ÏÞÖÆ)
-17£©pam_service_name=vsftpd(ÐéÄâÓÃ»§Ê¹ÓÃPAMÈÏÖ¤·½Ê½£¬ÕâÀïÊÇÉèÖÃPAMÊ¹ÓÃµÄÃû³Æ£¬Ä¬ÈÏ¼´¿É£¬Óë/etc/pam.d/vsftpd¶ÔÓ¦) userlist_enable=YES(ÊÇ·ñÆôÓÃvsftpd.user_listÎÄ¼þ£¬ºÚÃûµ¥,°×Ãûµ¥¶¼¿ÉÒÔ
-18)pasv_min_port=61001(±»¶¯Ä£Ê½Ê¹ÓÃ¶Ë¿Ú·¶Î§×îÐ¡Öµ)
-19)pasv_max_port=62000(±»¶¯Ä£Ê½Ê¹ÓÃ¶Ë¿Ú·¶Î§×î´óÖµ)
-20)pasv_enable=YES(pasv_enable=YES/NO£¨YES£©
-ÈôÉèÖÃÎªYES£¬ÔòÊ¹ÓÃPASV¹¤×÷Ä£Ê½£»ÈôÉèÖÃÎªNO£¬ÔòÊ¹ÓÃPORTÄ£Ê½¡£Ä¬ÈÏÖµÎªYES£¬¼´Ê¹ÓÃPASV¹¤×÷Ä£Ê½¡£
-   FTPÐ­ÒéÓÐÁ½ÖÖ¹¤×÷·½Ê½£ºPORT·½Ê½ºÍPASV·½Ê½£¬ÖÐÎÄÒâË¼ÎªÖ÷¶¯Ê½ºÍ±»¶¯Ê½¡£
-   Ò»¡¢PORT£¨Ö÷¶¯£©·½Ê½µÄÁ¬½Ó¹ý³ÌÊÇ£º¿Í»§¶ËÏò·þÎñÆ÷µÄFTP¶Ë¿Ú£¨Ä¬ÈÏÊÇ21£©·¢ËÍÁ¬½ÓÇëÇó£¬·þÎñÆ÷½ÓÊÜÁ¬½Ó£¬½¨Á¢Ò»ÌõÃüÁîÁ´Â·¡£ 
-  µ±ÐèÒª´«ËÍÊý¾ÝÊ±£¬¿Í»§¶ËÔÚÃüÁîÁ´Â·ÉÏÓÃ PORTÃüÁî¸æËß·þÎñÆ÷£º¡°ÎÒ´ò¿ªÁË****¶Ë¿Ú£¬Äã¹ýÀ´Á¬½ÓÎÒ¡±¡£ÓÚÊÇ·þÎñÆ÷´Ó20¶Ë¿ÚÏò¿Í»§¶ËµÄ****¶Ë¿Ú·¢ËÍÁ¬½ÓÇëÇó£¬½¨Á¢Ò»ÌõÊý¾ÝÁ´Â·À´´«ËÍÊý¾Ý¡£
-   ¶þ¡¢PASV£¨±»¶¯£©·½Ê½µÄÁ¬½Ó¹ý³ÌÊÇ£º¿Í»§¶ËÏò·þÎñÆ÷µÄFTP¶Ë¿Ú£¨Ä¬ÈÏÊÇ21£©·¢ËÍÁ¬½ÓÇëÇó£¬·þÎñÆ÷½ÓÊÜÁ¬½Ó£¬½¨Á¢Ò»ÌõÃüÁîÁ´Â·¡£ 
-  µ±ÐèÒª´«ËÍÊý¾ÝÊ±£¬·þÎñÆ÷ÔÚÃüÁîÁ´Â·ÉÏÓÃ PASVÃüÁî¸æËß¿Í»§¶Ë£º¡°ÎÒ´ò¿ªÁË****¶Ë¿Ú£¬Äã¹ýÀ´Á¬½ÓÎÒ¡±¡£ÓÚÊÇ¿Í»§¶ËÏò·þÎñÆ÷µÄ****¶Ë¿Ú·¢ËÍÁ¬½ÓÇëÇó£¬½¨Á¢Ò»ÌõÊý¾ÝÁ´Â·À´´«ËÍÊý¾Ý¡£ 
-  ´ÓÉÏÃæ¿ÉÒÔ¿´³ö£¬Á½ÖÖ·½Ê½µÄÃüÁîÁ´Â·Á¬½Ó·½·¨ÊÇÒ»ÑùµÄ£¬¶øÊý¾ÝÁ´Â·µÄ½¨Á¢·½·¨¾ÍÍêÈ«²»Í¬¡£¶øFTPµÄ¸´ÔÓÐÔ¾ÍÔÚÓÚ´Ë¡£
+ï»¿æ…•è¯¾ç½‘é¡¹ç›®è¦ç”¨åˆ°çš„é…ç½®é¡¹ï¼š
+1ï¼‰local_root=/ftpfile(å½“æœ¬åœ°ç”¨æˆ·ç™»å…¥æ—¶ï¼Œå°†è¢«æ›´æ¢åˆ°å®šä¹‰çš„ç›®å½•ä¸‹ï¼Œé»˜è®¤å€¼ä¸ºå„ç”¨æˆ·çš„å®¶ç›®å½•) 
+2ï¼‰anon_root=/ftpfile(ä½¿ç”¨åŒ¿åç™»å…¥æ—¶ï¼Œæ‰€ç™»å…¥çš„ç›®å½•) 
+3ï¼‰use_localtime=YES(é»˜è®¤æ˜¯GMTæ—¶é—´ï¼Œæ”¹æˆä½¿ç”¨æœ¬æœºç³»ç»Ÿæ—¶é—´)
+4ï¼‰anonymous_enable=NO(ä¸å…è®¸åŒ¿åç”¨æˆ·ç™»å½•)
+5ï¼‰local_enable=YES(å…è®¸æœ¬åœ°ç”¨æˆ·ç™»å½•)
+6ï¼‰write_enable=YES(æœ¬åœ°ç”¨æˆ·å¯ä»¥åœ¨è‡ªå·±å®¶ç›®å½•ä¸­è¿›è¡Œè¯»å†™æ“ä½œ)
+7ï¼‰local_umask=022(æœ¬åœ°ç”¨æˆ·æ–°å¢žæ¡£æ¡ˆæ—¶çš„umaskå€¼)
+8ï¼‰dirmessage_enable=YES(å¦‚æžœå¯åŠ¨è¿™ä¸ªé€‰é¡¹ï¼Œé‚£ä¹ˆä½¿ç”¨è€…ç¬¬ä¸€æ¬¡è¿›å…¥ä¸€ä¸ªç›®å½•æ—¶ï¼Œä¼šæ£€æŸ¥è¯¥ç›®å½•ä¸‹æ˜¯å¦æœ‰.messageè¿™ä¸ªæ¡£æ¡ˆï¼Œå¦‚æžœæœ‰ï¼Œåˆ™ä¼šå‡ºçŽ°æ­¤æ¡£æ¡ˆçš„å†…å®¹ï¼Œé€šå¸¸è¿™ä¸ªæ¡£æ¡ˆä¼šæ”¾ç½®æ¬¢è¿Žè¯è¯­ï¼Œæˆ–æ˜¯å¯¹è¯¥ç›®å½•çš„è¯´æ˜Žã€‚é»˜è®¤å€¼ä¸ºå¼€å¯)
+9ï¼‰xferlog_enable=YES(æ˜¯å¦å¯ç”¨ä¸Šä¼ /ä¸‹è½½æ—¥å¿—è®°å½•ã€‚å¦‚æžœå¯ç”¨ï¼Œåˆ™ä¸Šä¼ ä¸Žä¸‹è½½çš„ä¿¡æ¯å°†è¢«å®Œæ•´çºªå½•åœ¨xferlog_file æ‰€å®šä¹‰çš„æ¡£æ¡ˆä¸­ã€‚é¢„è®¾ä¸ºå¼€å¯ã€‚)
+10ï¼‰connect_from_port_20=YES(æŒ‡å®šFTPä½¿ç”¨20ç«¯å£è¿›è¡Œæ•°æ®ä¼ è¾“ï¼Œé»˜è®¤å€¼ä¸ºYES)
+11ï¼‰xferlog_std_format=YES(å¦‚æžœå¯ç”¨ï¼Œåˆ™æ—¥å¿—æ–‡ä»¶å°†ä¼šå†™æˆxferlogçš„æ ‡å‡†æ ¼å¼)
+12ï¼‰ftpd_banner=Welcome to mmall FTP Server(è¿™é‡Œç”¨æ¥å®šä¹‰æ¬¢è¿Žè¯è¯­çš„å­—ç¬¦ä¸²)
+13ï¼‰chroot_local_user=NO(ç”¨äºŽæŒ‡å®šç”¨æˆ·åˆ—è¡¨æ–‡ä»¶ä¸­çš„ç”¨æˆ·æ˜¯å¦å…è®¸åˆ‡æ¢åˆ°ä¸Šçº§ç›®å½•)
+14ï¼‰chroot_list_enable=YES(è®¾ç½®æ˜¯å¦å¯ç”¨chroot_list_fileé…ç½®é¡¹æŒ‡å®šçš„ç”¨æˆ·åˆ—è¡¨æ–‡ä»¶)
+15ï¼‰chroot_list_file=/etc/vsftpd/chroot_list(ç”¨äºŽæŒ‡å®šç”¨æˆ·åˆ—è¡¨æ–‡ä»¶)
+16ï¼‰listen=YES(è®¾ç½®vsftpdæœåŠ¡å™¨æ˜¯å¦ä»¥standaloneæ¨¡å¼è¿è¡Œï¼Œä»¥standaloneæ¨¡å¼è¿è¡Œæ˜¯ä¸€ç§è¾ƒå¥½çš„æ–¹å¼ï¼Œæ­¤æ—¶listenå¿…é¡»è®¾ç½®ä¸ºYESï¼Œæ­¤ä¸ºé»˜è®¤å€¼ã€‚å»ºè®®ä¸è¦æ›´æ”¹ï¼Œæœ‰å¾ˆå¤šä¸ŽæœåŠ¡å™¨è¿è¡Œç›¸å…³çš„é…ç½®å‘½ä»¤ï¼Œéœ€è¦åœ¨æ­¤æ¨¡å¼ä¸‹æ‰æœ‰æ•ˆï¼Œè‹¥è®¾ç½®ä¸ºNOï¼Œåˆ™vsftpdä¸æ˜¯ä»¥ç‹¬ç«‹çš„æœåŠ¡è¿è¡Œï¼Œè¦å—åˆ°xinetdæœåŠ¡çš„ç®¡æŽ§ï¼ŒåŠŸèƒ½ä¸Šä¼šå—åˆ°é™åˆ¶)
+17ï¼‰pam_service_name=vsftpd(è™šæ‹Ÿç”¨æˆ·ä½¿ç”¨PAMè®¤è¯æ–¹å¼ï¼Œè¿™é‡Œæ˜¯è®¾ç½®PAMä½¿ç”¨çš„åç§°ï¼Œé»˜è®¤å³å¯ï¼Œä¸Ž/etc/pam.d/vsftpdå¯¹åº”) userlist_enable=YES(æ˜¯å¦å¯ç”¨vsftpd.user_listæ–‡ä»¶ï¼Œé»‘åå•,ç™½åå•éƒ½å¯ä»¥
+18)pasv_min_port=61001(è¢«åŠ¨æ¨¡å¼ä½¿ç”¨ç«¯å£èŒƒå›´æœ€å°å€¼)
+19)pasv_max_port=62000(è¢«åŠ¨æ¨¡å¼ä½¿ç”¨ç«¯å£èŒƒå›´æœ€å¤§å€¼)
+20)pasv_enable=YES(pasv_enable=YES/NOï¼ˆYESï¼‰
+è‹¥è®¾ç½®ä¸ºYESï¼Œåˆ™ä½¿ç”¨PASVå·¥ä½œæ¨¡å¼ï¼›è‹¥è®¾ç½®ä¸ºNOï¼Œåˆ™ä½¿ç”¨PORTæ¨¡å¼ã€‚é»˜è®¤å€¼ä¸ºYESï¼Œå³ä½¿ç”¨PASVå·¥ä½œæ¨¡å¼ã€‚
+   FTPåè®®æœ‰ä¸¤ç§å·¥ä½œæ–¹å¼ï¼šPORTæ–¹å¼å’ŒPASVæ–¹å¼ï¼Œä¸­æ–‡æ„æ€ä¸ºä¸»åŠ¨å¼å’Œè¢«åŠ¨å¼ã€‚
+   ä¸€ã€PORTï¼ˆä¸»åŠ¨ï¼‰æ–¹å¼çš„è¿žæŽ¥è¿‡ç¨‹æ˜¯ï¼šå®¢æˆ·ç«¯å‘æœåŠ¡å™¨çš„FTPç«¯å£ï¼ˆé»˜è®¤æ˜¯21ï¼‰å‘é€è¿žæŽ¥è¯·æ±‚ï¼ŒæœåŠ¡å™¨æŽ¥å—è¿žæŽ¥ï¼Œå»ºç«‹ä¸€æ¡å‘½ä»¤é“¾è·¯ã€‚ 
+  å½“éœ€è¦ä¼ é€æ•°æ®æ—¶ï¼Œå®¢æˆ·ç«¯åœ¨å‘½ä»¤é“¾è·¯ä¸Šç”¨ PORTå‘½ä»¤å‘Šè¯‰æœåŠ¡å™¨ï¼šâ€œæˆ‘æ‰“å¼€äº†****ç«¯å£ï¼Œä½ è¿‡æ¥è¿žæŽ¥æˆ‘â€ã€‚äºŽæ˜¯æœåŠ¡å™¨ä»Ž20ç«¯å£å‘å®¢æˆ·ç«¯çš„****ç«¯å£å‘é€è¿žæŽ¥è¯·æ±‚ï¼Œå»ºç«‹ä¸€æ¡æ•°æ®é“¾è·¯æ¥ä¼ é€æ•°æ®ã€‚
+   äºŒã€PASVï¼ˆè¢«åŠ¨ï¼‰æ–¹å¼çš„è¿žæŽ¥è¿‡ç¨‹æ˜¯ï¼šå®¢æˆ·ç«¯å‘æœåŠ¡å™¨çš„FTPç«¯å£ï¼ˆé»˜è®¤æ˜¯21ï¼‰å‘é€è¿žæŽ¥è¯·æ±‚ï¼ŒæœåŠ¡å™¨æŽ¥å—è¿žæŽ¥ï¼Œå»ºç«‹ä¸€æ¡å‘½ä»¤é“¾è·¯ã€‚ 
+  å½“éœ€è¦ä¼ é€æ•°æ®æ—¶ï¼ŒæœåŠ¡å™¨åœ¨å‘½ä»¤é“¾è·¯ä¸Šç”¨ PASVå‘½ä»¤å‘Šè¯‰å®¢æˆ·ç«¯ï¼šâ€œæˆ‘æ‰“å¼€äº†****ç«¯å£ï¼Œä½ è¿‡æ¥è¿žæŽ¥æˆ‘â€ã€‚äºŽæ˜¯å®¢æˆ·ç«¯å‘æœåŠ¡å™¨çš„****ç«¯å£å‘é€è¿žæŽ¥è¯·æ±‚ï¼Œå»ºç«‹ä¸€æ¡æ•°æ®é“¾è·¯æ¥ä¼ é€æ•°æ®ã€‚ 
+  ä»Žä¸Šé¢å¯ä»¥çœ‹å‡ºï¼Œä¸¤ç§æ–¹å¼çš„å‘½ä»¤é“¾è·¯è¿žæŽ¥æ–¹æ³•æ˜¯ä¸€æ ·çš„ï¼Œè€Œæ•°æ®é“¾è·¯çš„å»ºç«‹æ–¹æ³•å°±å®Œå…¨ä¸åŒã€‚è€ŒFTPçš„å¤æ‚æ€§å°±åœ¨äºŽæ­¤ã€‚
 )
 
 
@@ -38,7 +38,7 @@
 # Please read the vsftpd.conf.5 manual page to get a full idea of vsftpd's 
 # capabilities. # 
 # Allow anonymous FTP? (Beware - allowed by default if you comment this out). local_root=/product/ftpfile #chroot_local_user=YES anon_root=/product/ftpfile use_localtime=YES 
-#ÄäÃû 
+#åŒ¿å 
 #anonymous_enable=YES anonymous_enable=NO #
  # Uncomment this to allow local users to log in. local_enable=YES # 
 # Uncomment this to enable any form of FTP write command. write_enable=YES #
