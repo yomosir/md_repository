@@ -17,8 +17,14 @@
 1. 到```/etc/vsftp```目录下
 2. 创建新文件 chroot_list
 3. 把刚才新增的虚拟用户添加到此配置文件中，后续要引用
-4. ```sudo vim /etc/selinux/config```，修改SELINUX=disabled   
-```如果验证的时候碰到550拒绝访问的时候可执行 sudo setsebool -P ftp_home_dir 1``` 
+4. (此步可以酌情处理，senlinux可以开启，但是要对ftp相关的进行设置) 
+```sudo vim /etc/selinux/config```，修改SELINUX=disabled   
+```
+getsebool -a 可以查看有关selinux的相关bool配置
+如果验证的时候碰到550拒绝访问的时候可执行 sudo setsebool -P ftp_home_dir 1
+如果在使用以上命令是，报错需要selinux policy，则可以使用yum安装相关的包，selinux-
+target.
+```
 5. 配置vsftp.conf
 6. 防火墙配置
  防火墙配置文件为```/etc/sysconfig/iptables```
@@ -30,8 +36,9 @@
 
 ```
 最后重启防火墙
+>注意：可以是同netstat命令查看开放的端口，如果命令不存在，则可以安装net-tools
 
 #### 验证
 1. 先启动ftp服务
 2. 查找ip
-3. 用浏览器访问ftp服务
+3. 用浏览器访问ftp服务，访问时使用的时```ftp://```
