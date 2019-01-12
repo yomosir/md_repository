@@ -70,6 +70,48 @@ new Vue({
  
 ### 基本概念
 - 条件渲染
+
+`v-if`,`v-else , v-else-if`,`v-show`
+
+```
+<div v-if="count > 0">
+	count大于0 ，count是 {{count}}
+</div>
+<div v-else>
+	count值是：{{count}}
+</div>
+<div v-show="count == -1">
+	show:{{count}}
+</div>
+```
+
 - 列表渲染
+
+`v-for`,`v-for & v-if`,`v-for 高阶用法`
+
+```
+<div v-for="item in list">
+	{{item}} // 其中list是一个数组或者可遍历的元素
+</div>
+```
+
 - 事件处理
 - class,style绑定
+
+```
+<div 
+	:class=['active','add',{'another': item.age < 30]
+	:style="styleMsg">
+	
+</div>
+<script>
+	new Vue({
+		data:{
+			styleMsg: {
+				color: 'red',
+				textShadow: '0 0 5px green',
+			},
+		}
+	});
+</script>
+```
