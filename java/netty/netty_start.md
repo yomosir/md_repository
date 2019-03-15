@@ -106,3 +106,16 @@ netty相关的基础开发使用方式
 ```
 
 - channelActive ： 当连接建立完成，等待生成流量
+
+- 发送消息需要分配包含消息的新缓存，通过`ctx.alloc()`获取当前的分配空间并分配新的缓存
+
+- `ctx.writeAndFlush()`返回一个ChannelFuture,一个ChannelFuture代表一个还没有发生的I/O操作。这代表，任何被请求过的操作可能还不会发生，一位所有的操作再netty中都是异步的。
+
+```java
+//下面这段代码可能会使得在发送消息之前将连接关闭
+    Channel ch = ...;
+    ch.writeAndFlush(message);
+    ch.close();
+```
+
+因此需要等ChannelFuture完成后才能关闭连接。只需要为返回的ChannelFuture简单的添加一个`ChannelFutureListener`。创建一个匿名的`ChannelFutureListener`，当操作结束后在进行关闭连接。
