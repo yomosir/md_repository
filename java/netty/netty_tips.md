@@ -31,7 +31,65 @@
 ## 编写简单的netty服务的过程
 
 - 构建一对主从线程组
+
 - 定义服务器启动类
+
 - 为服务设置Channel
-- 设置处理从线程池的助手类初始化器
+
+- 设置处理从线程池的助手类初始化器(相当于拦截器)
+
 - 监听启动和关闭服务器
+
+  ### 编写代码，api介绍
+
+  - 定义一对线程组（使用 **EvenLoopGroup** 类）
+    - **bossGroup** 主线程组，用于接收客户端的连接，但是不做任何处理，跟老板一样，不做事
+    - **workerGroup** 从线程组，老板线程组会把任务丢给他，让手下线程组去做任务
+
+  - 启动类
+    - **ServerBootstrap**
+      - group() 方法 ：需要针对线程模型设置group，将两个线程组当做参数传入group方法中
+      - channel()方法： 设置通道类型NioServerSocketChannel.class
+      - childHandler()：针对从线程组做一个相应的操作。（子处理器）
+      - 启动netty服务
+
+  - ```ChannelFuture future =  serverBootStrap.bind(port).sync(); ``//绑定端口后，等待启动完成，同时启动方式为同步
+
+  - ```future.channel().closeFuture().sync()```用于监听关闭的channel，设置为同步方式
+
+  - 优雅的关闭 ： ```bossGroup.shutdownGracefully()    /   workerGroup.shutdownGracefully()```
+
+    
+  ####   设置channel初始化器
+
+  每一个channel由多个handler共同组成的管道（**pipeline**）， **handler**可以视为一个个助手类
+  
+  *pipline可视为一个大的拦截器，然后handler是一个个小的拦截器。* 
+  
+  - 需要继承`ChannelInitializer<SocketChannel>`,实现需要实现的方法
+  
+    - 通过SocketChannel获取对应的管道： `ChannelPipline pipline = channel.pipline();`
+  
+    - addAfter,addBefore,addLast三种方法，一般使用addLast()，常用的handler：
+  
+      - `HttpServerCodec`时netty自己提供的助手类，当请求到服务端时我们需要进行解码，响应到客户端做编码
+      - 如果使用protobuf可以使用protobuf的handler
+      - 可以添加自定义的handler
+  
+      ##### 写自定义handler
+  
+      - 可以继承`SimpleChannelInboundHandler<HttpObject>`,重写相应的方法
+      - `ByteBuf`是一个缓冲区，我们可以将我们的数据拷贝到缓冲区中，使用`Unpooled.copiedBuffer()`将数据拷贝到缓冲区中
+      - HTTP_1_1会默认开启keepAlive
+  
+      **连接建立的生命周期**：
+  
+      - 助手类添加
+      - channel注册
+      - channel活跃（Active）
+      - channel读取完毕
+      - channel不活跃
+      - channel移除
+      - 助手类移除
+  
+      
