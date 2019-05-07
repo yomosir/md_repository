@@ -73,23 +73,28 @@
     - addAfter,addBefore,addLast三种方法，一般使用addLast()，常用的handler：
   
       - `HttpServerCodec`时netty自己提供的助手类，当请求到服务端时我们需要进行解码，响应到客户端做编码
+      - `ChunkedWriteHandler` 是对写大数据流的支持
+      - `HttpObjectAggregator(length)`是一个聚合器，length是消息的最大长度，对HttpMessage进行聚合，聚合成FullHttpRequest和FullHttpResponse，几乎在netty中的变成都会使用到此handler；length可以为：1024*64 **以上三个是对http协议的支持**
+  - `WebsocketServerProtocolHandler(path)`是服务器针对websocket处理的协议，用户指定给客户端连接访问的路由：path；
+        - 本handler会帮助处理一些繁重复杂的事，会帮助处理握手动作：handshaking（close，ping，pong）
+    - 对于websocket来讲，都是以frames传输的，不同的数据类型对应的frames也不同，如（TextWebsocketFrame，BinaryWebsocketFrame等）
       - 如果使用protobuf可以使用protobuf的handler
       - 可以添加自定义的handler
-  
-      ##### 写自定义handler
-  
-      - 可以继承`SimpleChannelInboundHandler<HttpObject>`,重写相应的方法
+      
+  ##### 写自定义handler
+      
+  - 可以继承`SimpleChannelInboundHandler<HttpObject>`,重写相应的方法
       - `ByteBuf`是一个缓冲区，我们可以将我们的数据拷贝到缓冲区中，使用`Unpooled.copiedBuffer()`将数据拷贝到缓冲区中
       - HTTP_1_1会默认开启keepAlive
-  
+      
       **连接建立的生命周期**：
-  
+      
       - 助手类添加
       - channel注册
-      - channel活跃（Active）
+  - channel活跃（Active）
       - channel读取完毕
       - channel不活跃
       - channel移除
       - 助手类移除
-  
+      
       
